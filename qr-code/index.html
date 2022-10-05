@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Frontend Mentor | QR code component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --bg-dark: #141127;
+        --container-dark: #3d3354;
+        --title-dark: #ffffff;
+        --bg-light: #d6e1f0;
+        --container-light: #ffffff;
+        --title-light: #000000;
+        --attribution-dark: #ffffff;
+        --attribution-light: #000000;
+
+        --page-bg-color: var(--bg-dark);
+        --page-container-color: var(--container-dark);
+        --page-title-color: var(--title-dark);
+        --page-attribution-color: var(--attribution-dark);
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--page-bg-color);
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        margin: 150px auto;
+        width: 280px;
+        background-color: var(--page-container-color);
+        border: solid 1px transparent;
+        border-radius: 15px;
+        padding: 15px;
+      }
+
+      .title {
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin: 20px 0;
+        color: var(--page-title-color);
+      }
+
+      .description {
+        color: hsl(220, 15%, 55%);
+        font-weight: 400;
+        text-align: center;
+        font-size: 15px;
+        font-family: "Outfit", sans-serif;
+        margin-bottom: 40px;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      #change-theme {
+        font-size: 24px;
+        cursor: pointer;
+        align-self: center;
+      }
+
+      .attribution {
+        color: var(--page-attribution-color);
+      }
+    </style>
+  </head>
+  <body id="body">
+    <main class="container" id="ctn">
+      <img src="./images/image-qr-code.png" alt="qr code" />
+      <h1 class="title" id="title">
+        Improve your front-end skills by building projects
+      </h1>
+      <p class="description">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+      <a id="change-theme">
+        <i class="fa-solid fa-sun"></i>
+      </a>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Andrey Dang</a>.
+    </footer>
+
+    <script>
+      var btnChangeTheme = document.getElementById("change-theme");
+      var currentTheme = "dark";
+      var moonIcon = document.createElement("i");
+      moonIcon.className = "fa-solid fa-moon";
+
+      var sunIcon = document.createElement("i");
+      sunIcon.className = "fa-solid fa-sun";
+
+      btnChangeTheme.addEventListener("click", changeTheme);
+      function changeButtonState() {
+        if (currentTheme === "dark") {
+          currentTheme = "light";
+          btnChangeTheme.replaceChildren(moonIcon);
+        } else {
+          currentTheme = "dark";
+          btnChangeTheme.replaceChildren(sunIcon);
+        }
+      }
+
+      function changeContainerTheme() {
+        var containerColor = `var(--container-${currentTheme})`;
+        document.body.style.setProperty("--page-container-color", containerColor);
+      }
+
+      function changeBodyTheme() {
+        var bodyColor = `var(--bg-${currentTheme})`;
+        document.body.style.setProperty("--page-bg-color", bodyColor);
+      }
+
+      function changeTitleTheme() {
+        var titleColor = `var(--title-${currentTheme})`;
+        document.body.style.setProperty("--page-title-color", titleColor);
+      }
+
+      function changeAttributionTheme() {
+        var attributionColor = `var(--attribution-${currentTheme})`;
+        document.body.style.setProperty("--page-attribution-color", attributionColor);
+      }
+      
+
+      function changeTheme() {
+        changeButtonState();
+        changeContainerTheme();
+        changeBodyTheme();
+        changeTitleTheme();
+        changeAttributionTheme();
+      }
+    </script>
+  </body>
+</html>
