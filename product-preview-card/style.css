@@ -82,7 +82,7 @@ img {
 
 .old-price {
     margin: auto;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     color: var(--dark-grayish-blue);
     text-decoration: line-through;

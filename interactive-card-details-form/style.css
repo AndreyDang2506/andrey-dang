@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet : hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --font-size: 18px;
+    --font-weight: 500;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: solid 0.3px gray;
+    padding: 10px;
+    font-weight: bold;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.bg-left {
+    position: relative;
+    width: 30%;
+    background-image: radial-gradient( closest-corner, hsl(249, 99%, 64%),hsl(278, 94%, 30%), hsl(278, 94%, 30%));
+}
+
+.bg-right {
+    width: 70%;
+    color: var(--very-dark-violet);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    display: flex;
+}
+.card-form {
+    margin: auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-name, .card-number{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.card-date-cvc {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.card-date {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.card-date-label {
+    padding-bottom: 10px;
+}
+
+.card-date-input {
+    display: flex;
+}
+
+#card-date-mm, #card-date-yy {
+   width: 50%; 
+}
+
+#card-date-mm {
+    margin-right: 5px;
+}
+
+.card-cvc {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-cvc-label {
+    padding-bottom: 10px;
+}
+
+.card-cvc-input {
+    display: flex;
+}
+
+.btn-submit {
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card-front {
+    padding: 40px;
+    background-image: url('./images/bg-card-front.png');
+    background-size: contain;
+    width: 500px;
+    height: 300px;
+    background-repeat:   no-repeat;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    color: var(--white);
+}
+
+.account-number {
+    margin: 80px 0 25px 0;
+    left: 200px;
+    font-size: 25px;
+    font-family: var(--font-family);
+    text-align: center;
+    letter-spacing: 7px;
+}
+
+.card-info {
+    margin: 40px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-name {
+    text-transform: uppercase;
+
+}
+
+.card-back {
+    font-family: var(--font-family);
+    font-weight: bold;
+    padding: 40px;
+    background-image: url('./images/bg-card-back.png');
+    background-size: contain;
+    width: 500px;
+    height: 300px;
+    background-repeat:   no-repeat;
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    color: var(--white);
+    position: relative;
+}
+
+.cvc {
+    position: absolute;
+    top: 128px;
+    left: 410px;
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 0px) {
+    .container {
+        border: solid 0.1px gray;
+        border-radius: 5px;
+        margin: auto;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+    .bg-left {
+        position: relative;
+        width: 100%;
+    }
+
+    .bg-right {
+        width: 100%;
+        color: var(--very-dark-violet);
+        font-family: var(--font-family);
+        font-weight: var(--font-weight);
+    }
+
+    .card-form {
+        display: flex;
+        margin: 90px auto;
+    }
+
+    .card-front {
+        background-image: url('./images/bg-card-front.png');
+        position: absolute;
+        width: 320px;
+        top: 170px;
+        left: 30px;
+        padding: 15px;
+        z-index: 2;
+    }
+
+    .card-logo {
+        width: 50px;
+    }
+    
+    .account-number {
+        margin: 50px 0 5px 0;
+        left: 200px;
+        font-size: 20px;
+        font-family: var(--font-family);
+        text-align: center;
+        letter-spacing: 3px;
+    }
+    
+    .card-info {
+        margin: 25px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+
+    .card-back {
+        font-family: var(--font-family);
+        font-weight: bold;
+        background-image: url('./images/bg-card-back.png');
+        background-size: contain;
+        width: 320px;
+        background-repeat:   no-repeat;
+        position: absolute;
+        top: 71px;
+        left: 80px;
+        color: var(--white);
+        position: relative;
+        z-index: 1;
+    }
+
+    .cvc {
+        position: absolute;
+        top: 80px;
+        left: 250px;
+    }
+    
+    .btn-submit {
+        margin: 15px 0 0 0 ;
+    }
+}
